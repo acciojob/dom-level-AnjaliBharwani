@@ -1,11 +1,10 @@
 //your JS code here. If required.
-let level = document.getElementById('level');
-let c = 1;
-        
-while (level !== null && level.tagName.toLowerCase() !== 'html' ) {
-  level = level.parentElement; // Update the 'level' variable to its parent node
-  c++;     
-}   
- 
-alert(c); 
-getDOMLevel("level");
+const itemList = Array.from(document.getElementsByTagName("li"));
+
+for(let i=0; i < itemList.length; i++){
+	if(itemList[i].id){
+		if(itemList[i].id === "level"){
+			alert(`The level of the element is: ${i+1}`);
+		}
+	}
+}
